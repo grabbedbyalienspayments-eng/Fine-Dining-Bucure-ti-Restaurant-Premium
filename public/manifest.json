@@ -1,0 +1,16 @@
+{
+  "name": "Atelierul de Gust",
+  "short_name": "Atelierul de Gust",
+  "description": "Fine dining cu ingrediente locale reinterpretate",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d9b86c",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}
