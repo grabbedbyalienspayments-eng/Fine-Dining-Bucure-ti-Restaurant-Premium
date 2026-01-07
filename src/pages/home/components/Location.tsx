@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 
 const Location = () => {
@@ -24,6 +23,10 @@ const Location = () => {
 
   const openDirections = () => {
     window.open('https://maps.google.com/maps?q=Atelierul+de+Gust+București', '_blank');
+  };
+
+  const openWhatsApp = () => {
+    window.open('https://wa.me/40700000000', '_blank');
   };
 
   return (
@@ -78,7 +81,7 @@ const Location = () => {
                       className="text-gray-300"
                       style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
                     >
-                      Strada Gastronomiei 15<br />
+                      Strada Gustului nr. 11<br />
                       Sector 1, București, România
                     </p>
                   </div>
@@ -95,12 +98,34 @@ const Location = () => {
                     >
                       Telefon
                     </h4>
-                    <p 
-                      className="text-gray-300"
+                    <a
+                      href="tel:070000000"
+                      className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                       style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
                     >
-                      +40 21 123 4567
-                    </p>
+                      070 000 000
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-amber-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                    <i className="ri-whatsapp-line text-amber-500 text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 
+                      className="font-medium text-white mb-1"
+                      style={{ fontFamily: "'Inter', sans-serif" }}
+                    >
+                      WhatsApp
+                    </h4>
+                    <button
+                      onClick={openWhatsApp}
+                      className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                      style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
+                    >
+                      070 000 000
+                    </button>
                   </div>
                 </div>
 
@@ -115,12 +140,13 @@ const Location = () => {
                     >
                       Email
                     </h4>
-                    <p 
-                      className="text-gray-300"
+                    <a
+                      href="mailto:rezervari@rezervariatelierdegust.ro"
+                      className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                       style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300 }}
                     >
-                      rezervari@atelierdegust.ro
-                    </p>
+                      rezervari@rezervariatelierdegust.ro
+                    </a>
                   </div>
                 </div>
 
@@ -148,16 +174,29 @@ const Location = () => {
                 </div>
               </div>
 
-              <button
-                onClick={openDirections}
-                className="w-full mt-8 group bg-gradient-to-r from-amber-600 to-amber-500 text-white font-medium py-3 px-6 rounded-xl hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 whitespace-nowrap"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                <span className="flex items-center justify-center">
-                  <i className="ri-navigation-line mr-2 group-hover:rotate-12 transition-transform duration-300"></i>
-                  Direcții Google Maps
-                </span>
-              </button>
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <button
+                  onClick={openDirections}
+                  className="group bg-gradient-to-r from-amber-600 to-amber-500 text-white font-medium py-3 px-4 rounded-xl hover:shadow-lg hover:shadow-amber-500/25 transition-all duration-300 whitespace-nowrap"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
+                  <span className="flex items-center justify-center text-sm">
+                    <i className="ri-navigation-line mr-2 group-hover:rotate-12 transition-transform duration-300"></i>
+                    Google Maps
+                  </span>
+                </button>
+
+                <button
+                  onClick={openWhatsApp}
+                  className="group bg-green-600 text-white font-medium py-3 px-4 rounded-xl hover:shadow-lg hover:shadow-green-500/25 transition-all duration-300 whitespace-nowrap"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
+                  <span className="flex items-center justify-center text-sm">
+                    <i className="ri-whatsapp-line mr-2 group-hover:scale-110 transition-transform duration-300"></i>
+                    WhatsApp
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -170,7 +209,7 @@ const Location = () => {
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.8!2d26.1025384!3d44.4267674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDI1JzM2LjQiTiAyNsKwMDYnMDkuMSJF!5e0!3m2!1sen!2sro!4v1699123456789!5m2!1sen!2sro&theme=dark"
                 width="100%"
-                height="450"
+                height="500"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
                 allowFullScreen
                 loading="lazy"
